@@ -1,3 +1,5 @@
+// Package keyboard a helper package to retrieve values from standard console input
+
 package keyboard
 
 import (
@@ -7,6 +9,7 @@ import (
 	"strings"
 )
 
+// GetFloat retrieves a floating point number from console input or an error when input could not be read
 func GetFloat() (float64, error) {
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
@@ -25,6 +28,7 @@ func GetFloat() (float64, error) {
 	return number, nil
 }
 
+// GetInt retrieves an integer from console input or an error when input could not be read
 func GetInt() (int, error) {
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
